@@ -1,0 +1,354 @@
+/* 登录页面容器样式 */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  /* 背景渐变和图片叠加效果 */
+  background: linear-gradient(
+    rgba(245, 247, 250, 0.9),
+    rgba(228, 233, 242, 0.9)
+  ),
+  url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80') center/cover;
+  padding: 20px;
+  padding-bottom: 10vh;
+  /* 添加全局禁用文本选择和输入光标 */
+  * {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+  /* 允许输入框的文本选择和输入光标 */
+  .el-input__inner,
+  .el-input__wrapper,
+  .el-input {
+    user-select: text !important;
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+    cursor: text !important;
+  }
+}
+
+/* 登录框主体样式 */
+.login-box {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1.8rem 2.5rem 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  margin-top: -5vh;
+}
+
+/* 标题样式 */
+h1 {
+  font-size: 3.5em;
+  margin: 0.1em 1 0.7em;
+  text-align: center;
+  font-weight: 900;
+  font-family: 'Philosopher', sans-serif;
+  letter-spacing: 1px;
+  /* 标题渐变效果 */
+  background: linear-gradient(
+    45deg,
+    #2c2c2c,
+    #4a4a4a,
+    #6e6e6e,
+    #919191,
+    #6e6e6e,
+    #4a4a4a,
+    #2c2c2c
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 400%;
+  animation: gradient 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* 图书图标样式 */
+.library-icon {
+  font-size: 2.8em;
+  text-align: center;
+  margin: -0.4em 0 2em;
+}
+
+/* 图书图标渐变效果 */
+.library-icon i {
+  background: linear-gradient(
+    45deg,
+    #2c2c2c,
+    #4a4a4a,
+    #6e6e6e,
+    #919191,
+    #6e6e6e,
+    #4a4a4a,
+    #2c2c2c
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 300%;
+  animation: gradient 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* 登录选项容器 */
+.login-options {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 初始按钮容器（游客登录和用户登录） */
+.initial-buttons {
+  width: 100%;
+  position: absolute;
+  top: -50px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  align-items: center;
+}
+
+/* 登录按钮基础样式 */
+.login-btn {
+  padding: 15px 25px;
+  font-size: 1.1em;
+  cursor: pointer !important;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-weight: 500;
+  position: relative;
+  background: rgba(238, 238, 238, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 2px solid #eeeeee;
+  color: #000000;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  z-index: 1;
+}
+
+/* 登录按钮悬停效果 */
+.login-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(245, 245, 245, 0.95);
+  border-color: #f5f5f5;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* 登录按钮点击效果 */
+.login-btn:active {
+  transform: translateY(1px);
+}
+
+/* 按钮图标样式 */
+.login-btn .icon {
+  font-size: 1.4em;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+/* 按钮文字样式 */
+.login-btn span:not(.icon) {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  z-index: 1;
+}
+
+/* 按钮图标悬停动画 */
+.login-btn:hover .icon {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+/* 用户选项容器（普通用户和管理员） */
+.user-options-container {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: -35px;
+}
+
+/* 用户选项网格布局 */
+.user-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 0 auto 2rem;
+  justify-content: center;
+  width: 100%;
+  max-width: 280px;
+}
+
+/* 登录卡片样式 */
+.login-card {
+  width: 130px;
+  height: 130px;
+  padding: 0;
+  border-radius: 16px;
+  cursor: pointer !important;
+  transition: all 0.3s ease;
+  text-align: center;
+  border: 2px solid #eeeeee;
+  background: rgba(238, 238, 238, 0.95);
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin: 0;
+  outline: none;
+}
+
+/* 登录卡片悬停效果 */
+.login-card:hover {
+  transform: translateY(-2px);
+  background: rgba(245, 245, 245, 0.95);
+  border-color: #f5f5f5;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* 登录卡片图标 */
+.login-card .icon {
+  font-size: 2em;
+}
+
+/* 登录卡片标题 */
+.login-card h3 {
+  font-size: 1em;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* 返回箭头按钮 */
+.back-arrow {
+  position: absolute;
+  top: 0%;
+  left: -5px;
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 1.2em;
+  cursor: pointer !important;
+  padding: 10px;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 返回箭头悬停效果 */
+.back-arrow:hover {
+  color: #333;
+  background: rgba(238, 238, 238, 0.95);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 过渡动画 */
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.3s ease-in-out;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.fade-enter-to,
+.fade-leave-from {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 响应式布局 */
+@media (max-width: 480px) {
+  .login-box {
+    height: 350px;
+    padding: 1.8rem;
+  }
+  
+  h1 {
+    font-size: 2.8em;
+  }
+  
+  .login-btn {
+    padding: 12px 20px;
+    border-radius: 12px;
+  }
+  
+  .user-options {
+    grid-template-columns: 1fr;
+  }
+  
+  .login-card {
+    padding: 1.5rem 1rem;
+  }
+  
+  .login-card .icon {
+    font-size: 1.8em;
+  }
+  
+  .login-btn::before {
+    border-radius: 12px;
+  }
+}
+
+/* 对话框底部按钮布局 */
+.dialog-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* Element Plus 对话框样式覆盖 */
+:deep(.el-dialog) {
+  border-radius: 8px;
+}
+
+:deep(.el-dialog__header) {
+  margin-right: 0;
+  text-align: center;
+  font-weight: 600;
+}
+
+:deep(.el-dialog__body) {
+  padding-top: 20px;
+  padding-bottom: 0;
+}
+
+:deep(.el-form-item:last-child) {
+  margin-bottom: 0;
+}
+
+/* 渐变动画关键帧 */
+@keyframes gradient {
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+} 

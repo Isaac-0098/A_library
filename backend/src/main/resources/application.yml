@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/a_library?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  mvc:
+    cors:
+      allowed-origins: "http://localhost:5173"
+      allowed-methods: "*"
+      allowed-headers: "*"
+      allow-credentials: true
+  mybatis-plus:
+    configuration:
+      map-underscore-to-camel-case: true
+
+# 修改文件上传配置
+file:
+  upload:
+    path: classpath:imge/    # 修改为resources目录下的imge文件夹
+    url-prefix: /imge/       # 访问图片的URL前缀
